@@ -10,7 +10,7 @@ function setup() {
     fill(0); //text color black
     textAlign(CENTER, CENTER);
     gui = createGui();
-    cb1 = createCheckbox("Press", width / 2, 400,50,50);
+    cb1 = createButton("Press", width / 2, 400,50,50);
 
 }
 
@@ -25,8 +25,7 @@ if (textVisible) {
 }
 drawGui();
 if (cb1.val) {
-  fill (255,0,0);
-  rect(200,200,100);
+  textVisible = false;
 }
 }
 
@@ -35,7 +34,7 @@ if (cb1.val) {
 
 
 //function to make text disappear when user begins typing
-function keyPressed() {
-  textVisible = false;
-}
+//function keyPressed() {
+ // textVisible = false;
+//}
 
