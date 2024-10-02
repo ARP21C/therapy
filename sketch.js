@@ -8,8 +8,11 @@ function setup() {
  
    
     gui = createGui();
-    cb1 = createButton("Dismiss", 800, 400,50,50);
+    cb1 = createButton("Dismiss", 800, 300,100,30);
+    
 rectMode(CENTER,CENTER);
+
+
 }
 
 function draw() {
@@ -30,6 +33,7 @@ if (textVisible) {
 }
 if (cb1Visible) {
   drawGui();
+  
   if (cb1.val) {
     textVisible = false;
   }
@@ -43,9 +47,4 @@ if (cb1.val) {
   
 
 
-
-//function to make text disappear when user begins typing
-//function keyPressed() {
- // textVisible = false;
-//}
 
