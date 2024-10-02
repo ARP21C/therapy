@@ -1,6 +1,7 @@
 let textVisible = true; //variable to track text visibility
 let gui;
 let cb1;
+let cb1Visible = true;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -10,7 +11,7 @@ function setup() {
     fill(0); //text color black
     textAlign(CENTER, CENTER);
     gui = createGui();
-    cb1 = createButton("Press", width / 2, 400,50,50);
+    cb1 = createButton("Dismiss", width / 2, 400,50,50);
 
 }
 
@@ -23,10 +24,16 @@ if (textVisible) {
   text("to create a unique piece of artwork. We strive to transform the emotions you are feeling and whatever you" , width / 2 , 240 );
   text("are going through into something beautiful. Begin typing to start and whenever you are done press ___" , width / 2 , 260 );
 }
-drawGui();
-if (cb1.val) {
-  textVisible = false;
+if (cb1Visible) {
+  drawGui();
+  if (cb1.val) {
+    textVisible = false;
+  }
 }
+if (cb1.val) {
+  cb1Visible = false;
+}
+
 }
 
   
