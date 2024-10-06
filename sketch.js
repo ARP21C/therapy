@@ -10,14 +10,25 @@ function setup() {
     gui = createGui();
     cb1 = createButton("Dismiss", 800, 300,100,30);
     
-rectMode(CENTER,CENTER);
+    rectMode(CENTER,CENTER);
 
 
 }
 
 function draw() {
   background(173, 216, 230);
-//display text
+
+//drawing created by rect
+fill(255);
+rect(210,680,300,20);
+//created by text
+textSize(10 );
+   fill(0); //text color black
+   textAlign(LEFT, LEFT);
+text("Created by:Allison Pryor,Zoe,& Lindsay", 65,680);
+
+
+//display text "welcome to"
 if (textVisible) {
   fill(255);
   rect(width/2, 240, 500, 100);
@@ -31,6 +42,8 @@ if (textVisible) {
   text("are going through into something beautiful. Press dismiss and begin typing to start and when you are done" , width / 2 , 260 );
   text("press submit." , width / 2 , 280 );
 }
+
+//text buttone
 if (cb1Visible) {
   drawGui();
   
