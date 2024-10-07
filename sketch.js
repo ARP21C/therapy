@@ -25,7 +25,7 @@ rect(210,680,300,20);
 textSize(10 );
    fill(0); //text color black
    textAlign(LEFT, LEFT);
-text("Created by:Allison Pryor,Zoe,& Lindsay", 65,680);
+text("Created by:Allison Pryor,Zoe Talamantez,& Lindsay Kuperman", 65,680);
 
 
 //display text "welcome to"
