@@ -12,10 +12,12 @@ function setup(){
 
   //create dismiss button
   b = createButton("Dismiss", 800, 300,100,30);
+  gui.loadStyle("Blue"); //setting gui style
 }
 
 function draw() {
   background(173, 216, 230);
+
 
   switch (state) {
     case 0:
@@ -24,6 +26,15 @@ function draw() {
       background(173, 216, 230);
 
       drawGui();
+
+      //drawing created by: rect (will b on every state)
+      fill(255);
+      rect(210,680,300,20);
+      //created by text
+      textSize(10 );
+      fill(0); //text color black
+      textAlign(LEFT, LEFT);
+      text("Created by:Allison Pryor,Zoe Talamantez,& Lindsay Kuperman", 65,680);
 
       //add white rect behind text
       fill(255);
