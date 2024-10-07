@@ -1,63 +1,52 @@
-let textVisible = true; //variable to track text visibility
+let state = 0;
 let gui;
-let cb1;
-let cb1Visible = true;
 
-function setup() {
+//variable for dismiss button
+let b;
+
+function setup(){
   createCanvas(1300, 725);
- 
-   
-    gui = createGui();
-    cb1 = createButton("Dismiss", 800, 300,100,30);
-    
-    rectMode(CENTER,CENTER);
+  rectMode(CENTER,CENTER);
 
+  gui = createGui();
 
+  //create dismiss button
+  b = createButton("Dismiss", 800, 300,100,30);
 }
 
 function draw() {
   background(173, 216, 230);
 
-//drawing created by rect
-fill(255);
-rect(210,680,300,20);
-//created by text
-textSize(10 );
-   fill(0); //text color black
-   textAlign(LEFT, LEFT);
-text("Created by:Allison Pryor,Zoe Talamantez,& Lindsay Kuperman", 65,680);
+  switch (state) {
+    case 0:
+      //do state 0 stuff
 
+      background(173, 216, 230);
 
-//display text "welcome to"
-if (textVisible) {
-  fill(255);
-  rect(width/2, 240, 500, 100);
-   //set text properties
-   textSize(10 );
-   fill(0); //text color black
-   textAlign(CENTER, CENTER);
-  text("Welcome to NAME , our mission is to create a safe space for you to journal and rant about anything", width / 2 , 200 );
-  text("that has been bothering you. This website interacts with the keys you press and the words you type" , width / 2 , 220 );
-  text("to create a unique piece of artwork. We strive to transform the emotions you are feeling and whatever you" , width / 2 , 240 );
-  text("are going through into something beautiful. Press dismiss and begin typing to start and when you are done" , width / 2 , 260 );
-  text("press submit." , width / 2 , 280 );
-}
+      drawGui();
 
-//text buttone
-if (cb1Visible) {
-  drawGui();
-  
-  if (cb1.val) {
-    textVisible = false;
+      //add white rect behind text
+      fill(255);
+      rect(width/2, 240, 500, 100);
+
+      //styling "welcome to" text
+      textSize(10 );
+      fill(0); //text color black
+      textAlign(CENTER, CENTER);
+
+      //typing "welcome to" text
+      text("Welcome to NAME , our mission is to create a safe space for you to journal and rant about anything", width / 2 , 200 );
+      text("that has been bothering you. This website interacts with the keys you press and the words you type" , width / 2 , 220 );
+      text("to create a unique piece of artwork. We strive to transform the emotions you are feeling and whatever you" , width / 2 , 240 );
+      text("are going through into something beautiful. Press dismiss and begin typing to start and when you are done" , width / 2 , 260 );
+      text("press submit." , width / 2 , 280 );
+     
+      //pressing dismiss button goes to state 1
+      if (b.isPressed) state = 1;
+      break;
+    case 1:
+      //do state 1 stuff
+      
+
   }
 }
-if (cb1.val) {
-  cb1Visible = false;
-}
-
-}
-
-  
-
-
-
